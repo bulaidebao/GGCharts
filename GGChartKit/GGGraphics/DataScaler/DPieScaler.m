@@ -129,9 +129,30 @@
         // 比例伸缩
         if (_roseRadius && max != 0) {
             
-            CGFloat radius = _outRadius - _inRadius;
-            radius *= [obj floatValue] / max;
-            _pies[idx].radiusRange.outRadius = _inRadius + radius;
+            if( _pieRadiusAry.count )
+            {
+               if( _pieRadiusAry.count > idx )
+               {
+                    _pies[idx].radiusRange.outRadius = [_pieRadiusAry[idx] floatValue];
+               }
+               else
+               {
+                   _pies[idx].radiusRange.outRadius = _outRadius;
+               }
+           }
+           else
+           {
+                CGFloat radius = _outRadius - _inRadius;
+                           
+                /// TODO GGPieChart修改 内圆半径和外圆半径
+                CGFloat scaleNum = [obj floatValue] / max;
+                if( scaleNum < 1.0 )
+                {
+                scaleNum = 0.8;
+                }
+                radius *= scaleNum;
+                _pies[idx].radiusRange.outRadius = _inRadius + radius;
+
         }
     }];
 }

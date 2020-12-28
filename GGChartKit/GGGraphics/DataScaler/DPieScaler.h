@@ -17,6 +17,11 @@
 @property (nonatomic, strong, readonly) NSArray <NSObject *> *pieObjAry;
 
 /**
+ * 扇形图半径数组
+ */
+@property (nonatomic, strong) NSArray  *pieRadiusAry;
+
+/**
  * 扇形图数据总和
  */
 @property (nonatomic, assign, readonly) CGFloat sum;

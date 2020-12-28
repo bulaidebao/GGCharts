@@ -35,6 +35,13 @@
 @property (nonatomic, assign) GGRadiusRange radiusRange;
 
 /**
+ * 扇形图半径 数组 : 用来设置 每一个扇形的半径
+ *
+ * 注意：设定的半径需大于 radiusRange.inRadius
+ */
+@property (nonatomic, strong) NSArray * pieRadiusArr;
+
+/**
  * 扇形图类型
  */
 @property (nonatomic, assign) RoseType roseType;

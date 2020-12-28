@@ -59,6 +59,13 @@
     self.pieScaler.outRadius = _radiusRange.outRadius;
 }
 
+- (void)setPieRadiusArr:(NSArray *)pieRadiusArr
+{
+    _pieRadiusArr = pieRadiusArr;
+    
+    self.pieScaler.pieRadiusAry = pieRadiusArr;
+}
+
 /**
  * 扇形图
  */
